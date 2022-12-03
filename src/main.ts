@@ -1,10 +1,10 @@
 import express, { Express } from 'express';
 
-import Logger from './logger';
-import HttpLogMiddleware from './httpLogger';
+import logger from './logger';
+import httpLogMiddleware from './http-logger';
 
 const app: Express = express();
-app.use(HttpLogMiddleware);
+app.use(httpLogMiddleware);
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(8000, () => {
-	Logger.info('Starting server on port 8000');
+	logger.info('Starting server on port 8000');
 });

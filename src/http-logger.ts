@@ -11,6 +11,6 @@ const skip = () => {
 	return env !== 'dev';
 };
 
-const HttpLogMiddleware = morgan(':method :url :status :res[content-length] - :response-time ms', { stream, skip });
+const httpLogMiddleware = morgan(':method :url :status :res[content-length] - :response-time ms', { stream, skip });
 
-export default HttpLogMiddleware;
+export default httpLogMiddleware;
